@@ -33,5 +33,42 @@ function hisPalindrome(str){
 }
 
 
-hisPalindrome('kayak')
-hisPalindrome('sufoe')
+//hisPalindrome('kayak')
+//hisPalindrome('sufoe')
+
+
+// factorize(12) ➞ [1, 2, 3, 4, 6, 12]
+// factorize(4) ➞ [1, 2, 4]
+// factorize(17) ➞ [1, 17]
+function myfactorize(n) {
+    let allN = []
+    let factors = []
+
+        for (let j = 1; j < n+1; j++) {
+        const currentCount = j;
+        allN.push(currentCount)
+
+        for (let i = 0; i < allN.length; i++) {
+        const currentCount2 = i+1;
+        if(currentCount * allN[j] === n){
+            factors.push(currentCount2)
+        }
+
+        console.log(factors, 'factors');
+    }
+    
+    
+    }
+
+        console.log(allN);
+}
+
+//if I can divide into you evenly, I am a factor, so we do n % i === 0
+// Not sure why I struggle on this one
+
+
+function hisFactor
+)
+factorize(12)
+factorize(4)
+factorize(17)
