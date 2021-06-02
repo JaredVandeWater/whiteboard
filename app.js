@@ -98,4 +98,72 @@ function hisTime(min){
     console.log(answer);
 }
 
-console.log(hisTime(200));
+//console.log(hisTime(200));
+
+
+
+
+// Description
+// Middle Earth is about to go to war. The forces of good will have many battles with the forces of evil. Different races will certainly be involved. Each race has a certain 'worth' when battling against others. On the side of good we have the following races, with their associated worth:
+// On the Good Side:
+// Hobbits - 1,
+// Men - 2,
+// Elves - 3,
+// Dwarves - 3,
+// Eagles - 4,
+// Wizards - 10
+// On the side of evil we have:
+// Orcs - 1,
+// Men - 2,
+// Wargs - 2,
+// Goblins - 2,
+// Uruk Hai - 3,
+// Trolls - 5,
+// Wizards - 10
+// Although weather, location, supplies and valor play a part in any battle, if you add up the worth of the side of good and compare it with the worth of the side of evil, the side with the larger worth will tend to win.
+// Thus, given the count of each of the races on the side of good, followed by the count of each of the races on the side of evil, determine which side wins.
+// Input:
+// The function will be given two parameters. Each parameter will be a string separated by a single space. Each string will contain the count of each race on the side of good and evil.
+// The first parameter will contain the count of each race on the side of good in the following order:
+// Hobbits, Men, Elves, Dwarves, Eagles, Wizards.
+// The second parameter will contain the count of each race on the side of evil in the following order:
+// Orcs, Men, Wargs, Goblins, Uruk Hai, Trolls, Wizards.
+// All values are non-negative integers. The resulting sum of the worth for each side will not exceed the limit of a 32-bit integer.
+// Output:
+// Return
+// if Good wins - "Battle Result: Good triumphs over Evil"
+// if Evil Wins - "Battle Result: Evil eradicates all trace of Good"
+// if Tied - "Battle Result: No victor on this battle field"
+function middleEarth(goodStr, badStr){
+
+    let totalGood=0
+    let totalBad = 0
+    let goodArr = goodStr.split(" ")
+    goodArr = goodArr.map( s => parseInt(s) )
+
+    let badArr = badStr.split(" ")
+    badArr = badArr.map( s => parseInt(s) )
+
+
+    for (let i = 0; i < goodArr.length; i++) {
+        if (i == 0){ totalGood += goodArr[i]}
+        if (i == 1 ){ totalGood += goodArr[i] * 2}
+        if (i == 2 || i == 3){ totalGood += goodArr[i] * 3}
+        if (i == 4 ){ totalGood += goodArr[i] * 4}
+        if (i == 5 ){ totalGood += goodArr[i] * 10}
+        console.log(totalGood);
+}
+
+    for (let i = 0; i < badArr.length; i++) {
+        if (i == 0){ totalBad += badArr[i]}
+        if (i == 1 || i == 2 || i== 3){ totalBad += badArr[i] * 2}
+        if (i == 4){ totalBad += badArr[i] * 3}
+        if (i == 5 ){ totalBad += badArr[i] * 5}
+        if (i == 6 ){ totalBad += badArr[i] * 10}
+        console.log(totalBad);
+}
+    if (totalGood > totalBad){console.log('good won');}
+    else{console.log('bad won');}
+}
+
+middleEarth('1 1 1 1 1 1', '1 1 1 1 1 1 1')
