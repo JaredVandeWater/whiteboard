@@ -1,31 +1,31 @@
 function longestWord(str) {
     let words = str.split(' ')
-    let longestWord=''
+    let longestWord = ''
     for (let i = 0; i < words.length; i++) {
-        if (words[i].split('').length>longestWord.split('').length) {
-            longestWord=words[i]
+        if (words[i].split('').length > longestWord.split('').length) {
+            longestWord = words[i]
         }
     }
-   console.log(longestWord);
+    console.log(longestWord);
 }
 //longestWord("What is the longest word in this string")
 
 //mine was dumb, because it was kind of a mix between the two, I really didn't need a for loop, and if I did use one I should have
 //used and inverted one to find out if it was a palindrome.
-function isPalindrome(str){
+function isPalindrome(str) {
     matches = true
     reversed = str.split('').reverse().join('')
     for (let i = 0; i < reversed.length; i++) {
-        if(reversed[i] === str[i]){
-            matches=true
-        }else matches = false
+        if (reversed[i] === str[i]) {
+            matches = true
+        } else matches = false
     }
     console.log(matches);
 }
 //isPalindrome('racecar')
 //isPalindrome('notapalindrome')
 
-function hisPalindrome(str){
+function hisPalindrome(str) {
     let wordArray = str.split('')
     wordArray.reverse()
     answer = str === wordArray.join('')
@@ -44,23 +44,23 @@ function myfactorize(n) {
     let allN = []
     let factors = []
 
-        for (let j = 1; j < n+1; j++) {
+    for (let j = 1; j < n + 1; j++) {
         const currentCount = j;
         allN.push(currentCount)
 
         for (let i = 0; i < allN.length; i++) {
-        const currentCount2 = i+1;
-        if(currentCount * allN[j] === n){
-            factors.push(currentCount2)
+            const currentCount2 = i + 1;
+            if (currentCount * allN[j] === n) {
+                factors.push(currentCount2)
+            }
+
+            console.log(factors, 'factors');
         }
 
-        console.log(factors, 'factors');
-    }
-    
-    
+
     }
 
-        console.log(allN);
+    console.log(allN);
 }
 
 //if I can divide into you evenly, I am a factor, so we do n % i === 0
@@ -74,27 +74,27 @@ function myfactorize(n) {
 
 
 
-function timeConvert(min){
+function timeConvert(min) {
 
     let hours = 0
 
     for (let i = 0; i <= min; i++) {
-        if (i % 60){
-            hours+=1
+        if (i % 60) {
+            hours += 1
         }
-        
+
     }
-    console.log(hours + ':' + (min - (hours*60)))
+    console.log(hours + ':' + (min - (hours * 60)))
 }
 
 //timeConvert(200)
 
 // wierd that I got stuck, Ive gotten this easily before.
 
-function hisTime(min){
-    let divide = Math.floor(min/60)
-    let remainder = min %60
-    let answer = divide +':'+ remainder
+function hisTime(min) {
+    let divide = Math.floor(min / 60)
+    let remainder = min % 60
+    let answer = divide + ':' + remainder
     console.log(answer);
 }
 
@@ -134,36 +134,46 @@ function hisTime(min){
 // if Good wins - "Battle Result: Good triumphs over Evil"
 // if Evil Wins - "Battle Result: Evil eradicates all trace of Good"
 // if Tied - "Battle Result: No victor on this battle field"
-function middleEarth(goodStr, badStr){
+function middleEarth(goodStr, badStr) {
 
-    let totalGood=0
+    let totalGood = 0
     let totalBad = 0
     let goodArr = goodStr.split(" ")
-    goodArr = goodArr.map( s => parseInt(s) )
+    goodArr = goodArr.map(s => parseInt(s))
 
     let badArr = badStr.split(" ")
-    badArr = badArr.map( s => parseInt(s) )
+    badArr = badArr.map(s => parseInt(s))
 
 
     for (let i = 0; i < goodArr.length; i++) {
-        if (i == 0){ totalGood += goodArr[i]}
-        if (i == 1 ){ totalGood += goodArr[i] * 2}
-        if (i == 2 || i == 3){ totalGood += goodArr[i] * 3}
-        if (i == 4 ){ totalGood += goodArr[i] * 4}
-        if (i == 5 ){ totalGood += goodArr[i] * 10}
+        if (i == 0) { totalGood += goodArr[i] }
+        if (i == 1) { totalGood += goodArr[i] * 2 }
+        if (i == 2 || i == 3) { totalGood += goodArr[i] * 3 }
+        if (i == 4) { totalGood += goodArr[i] * 4 }
+        if (i == 5) { totalGood += goodArr[i] * 10 }
         console.log(totalGood);
-}
+    }
 
     for (let i = 0; i < badArr.length; i++) {
-        if (i == 0){ totalBad += badArr[i]}
-        if (i == 1 || i == 2 || i== 3){ totalBad += badArr[i] * 2}
-        if (i == 4){ totalBad += badArr[i] * 3}
-        if (i == 5 ){ totalBad += badArr[i] * 5}
-        if (i == 6 ){ totalBad += badArr[i] * 10}
+        if (i == 0) { totalBad += badArr[i] }
+        if (i == 1 || i == 2 || i == 3) { totalBad += badArr[i] * 2 }
+        if (i == 4) { totalBad += badArr[i] * 3 }
+        if (i == 5) { totalBad += badArr[i] * 5 }
+        if (i == 6) { totalBad += badArr[i] * 10 }
         console.log(totalBad);
-}
-    if (totalGood > totalBad){console.log('good won');}
-    else{console.log('bad won');}
+    }
+    if (totalGood > totalBad) { console.log('good won'); }
+    else { console.log('bad won'); }
 }
 
-middleEarth('1 1 1 1 1 1', '1 1 1 1 1 1 1')
+//middleEarth('1 1 1 1 1 1', '1 1 1 1 1 1 1')
+
+//Any side of a triangle must be shorter than the other two sides added together.
+function isTriangle(num1, num2, num3) {
+    let isTriangle = true
+    if (num1 + num2 <= num3 || num1 + num3 <= num2 || num3 + num2 <= num1) { isTriangle = false }
+    return isTriangle
+}
+
+console.log(isTriangle(30, 30, 30))
+
