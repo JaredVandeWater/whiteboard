@@ -175,5 +175,33 @@ function isTriangle(num1, num2, num3) {
     return isTriangle
 }
 
-console.log(isTriangle(30, 30, 30))
+//console.log(isTriangle(30, 30, 30))
 
+
+
+
+function decode(arrOfWords) {
+    console.log(arrOfWords);
+    let answer = ""
+    for (let i = 0; i < arrOfWords.length; i++) {
+        let commonLetter = ""
+        let currentWord = arrOfWords[i].split().sort().join();
+        for (let j = 0; j < currentWord.length; j++) {
+            const currentLetter = currentWord[j];
+
+            if (commonLetter != currentLetter) {
+                commonLetter = currentLetter
+            } else { answer += currentLetter }
+        }
+    }
+    console.log(answer);
+}
+
+
+
+
+let code = ["eedadn", "drvtee", "eandsr", "raavrd", "atevrs", "tsrnev", "sdttsa", "rasrtv", "nssdts", "ntnada", "svetve", "tesnvt", "vntsnd", "vrdear", "dvrsen", "enarar"]
+
+//decode(code)
+
+// Misread the question, did it correctly based on how I read the question though lol
